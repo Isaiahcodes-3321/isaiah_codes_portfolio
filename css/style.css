@@ -705,6 +705,10 @@ h3.my-profession {
 .contact .contact-form .form-item textarea.form-control {
   height: 140px;
 }
+.contact .contact-info-item .icon .fab {
+  font-size: 25px;
+  color: var(--skin-color);
+}
 
 .contact .contact-form .btn {
   height: 50px;
