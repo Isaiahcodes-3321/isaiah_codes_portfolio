@@ -365,6 +365,8 @@ h3.my-profession {
   color: var(--text-black-700);
 }
 
+/* ====================== PERSONAL INFO SECTION (UPDATED) ====================== */
+
 .about .about-content .personal-info {
   flex: 0 0 60%;
   max-width: 60%;
@@ -382,22 +384,32 @@ h3.my-profession {
   font-size: 16px;
   color: var(--text-black-900);
   border-bottom: 1px solid var(--bg-black-50);
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.about .about-content .personal-info .info-item p span {
+/* This is the main rule controlling the fixed width of labels */
+.about .about-content .personal-info .info-item p .info-label {
+  display: inline-block;
+  /* Fixed width - you can change this value */
+  /* width: 100vw; */
+  flex-shrink: 0;
+  color: var(--text-black-900);
+  font-weight: 600;
+}
+
+.about .about-content .personal-info .info-item p span:not(.info-label) {
   font-weight: 400;
   color: var(--text-black-700);
-  margin-left: 4px;
-  display: inline-block;
+  flex: 1;
+  word-break: break-all;
 }
 
-.about .about-content .personal-info .buttons {
-  margin-top: 30px;
-}
-
-.about .about-content .personal-info .buttons .btn {
-  margin-right: 15px;
-  margin-top: 10px;
+/* Email specific styling */
+.about .about-content .personal-info .info-item p .sp {
+  word-break: break-all;
 }
 
 .about .about-content .skills {
@@ -522,7 +534,7 @@ h3.my-profession {
 .about .about-content .timeline .timeline-text {
   line-height: 25px;
   font-size: 16px;
-  text-align: justify;
+  /* text-align: justify; */
   color: var(--text-black-700);
 }
 
@@ -705,6 +717,7 @@ h3.my-profession {
 .contact .contact-form .form-item textarea.form-control {
   height: 140px;
 }
+
 .contact .contact-info-item .icon .fab {
   font-size: 25px;
   color: var(--skin-color);
@@ -715,36 +728,53 @@ h3.my-profession {
   padding: 0 50px;
 }
 
+/* ====================== MEDIA QUERIES ====================== */
+
 @media (max-width: 1199px) {
   .aside {
     left: -270px;
   }
+
   .main-content {
     padding-left: 0;
   }
-  .about .about-content .personal-info .info-item p span {
-    display: block;
+
+  /* Updated mobile behavior for info items */
+  .about .about-content .personal-info .info-item p {
+    flex-direction: column;
+  }
+
+  .about .about-content .personal-info .info-item p .info-label {
+    /* width: 100%; */
+    margin-bottom: 4px;
+  }
+
+  .about .about-content .personal-info .info-item p span:not(.info-label) {
     margin-left: 0;
   }
 }
 
 @media (max-width: 991px) {
+
   .contact .contact-info-item,
   .portfolio .portfolio-item,
   .service .service-item {
     flex: 0 0 50%;
     max-width: 50%;
   }
+
   .home .home-info {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
   .home .home-img {
     display: none;
   }
 }
 
 @media (max-width: 767px) {
+
   .contact .contact-form .col-6,
   .contact .contact-info-item,
   .portfolio .portfolio-item,
@@ -756,6 +786,7 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
   .container {
     overflow: hidden;
     width: 100%;
