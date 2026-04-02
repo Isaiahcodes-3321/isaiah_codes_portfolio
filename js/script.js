@@ -1,7 +1,7 @@
 "use strict"
 // TYPING ANIMATION
 var typed = new Typed('.typing', {
-    strings: [" ", "Web Developer", "Mobile Developer"],
+    strings: [" ", "Mobile Developer", "Web Developer"],
     typeSpeed: 100,
     BackSpeed: 20,
     loop: true
